@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CODEX HASIB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .header { text-align: center; margin: 20px 0 30px; }
+        .header h1 { font-size: 2.2rem; letter-spacing: 4px; font-weight: bold; }
+        .header h1 span { color: #ff0000; }
+        .status-top { color: #666; font-size: 0.75rem; margin-top: 5px; text-transform: uppercase; }
+
+        .container { width: 100%; max-width: 400px; }
+        
+        /* Details Box */
+        .info-card {
+            border: 2px solid #ff0000;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            background-color: #000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+        .info-card h2 {
+            color: #ff0000;
+            font-size: 1.1rem;
+            text-align: center;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+        }
+        .line { height: 1px; background: #222; margin-bottom: 20px; }
+        .row { display: flex; justify-content: space-between; margin-bottom: 12px; font-size: 0.9rem; font-weight: 600; }
+        .label { color: #ff0000; text-transform: uppercase; }
+        .value { color: #fff; text-align: right; }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .telegram { background: #0088cc; }
+        .discord { background: #5865F2; }
+        .btn:hover { transform: scale(1.02); opacity: 0.9; }
+
+        .footer { margin-top: auto; padding: 20px; color: #444; font-size: 0.8rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1><span>CODEX</span> HASIB</h1>
+        <p class="status-top">CLICK HERE TO PLAY MUSIC °° INFO ABOUT HASIB</p>
+    </div>
+
+    <div class="container">
+        <div class="info-card">
+            <h2><i class="fas fa-info-circle"></i> DETAILS ABOUT HASIB</h2>
+            <div class="line"></div>
+            
+            <div class="row"><span class="label">NAME:</span><span class="value">HASEBUL HASAN</span></div>
+            <div class="row"><span class="label">AGE:</span><span class="value">17</span></div>
+            <div class="row"><span class="label">CLASS:</span><span class="value">11</span></div>
+            <div class="row"><span class="label">SECTION:</span><span class="value">A</span></div>
+            <div class="row"><span class="label">ROLL:</span><span class="value">69</span></div>
+            <div class="row"><span class="label">RELIGION:</span><span class="value">ISLAM</span></div>
+            <div class="row"><span class="label">HOBBY:</span><span class="value">GAMING & CODING</span></div>
+            <div class="row"><span class="label">FAVOURITE COLOR:</span><span class="value">BLACK</span></div>
+            <div class="row"><span class="label">FAVOURITE GAME:</span><span class="value">FREE FIRE</span></div>
+            <div class="row"><span class="label">LOCATION:</span><span class="value">BANGLADESH</span></div>
+            <div class="row"><span class="label">STATUS:</span><span class="value">STUDENT</span></div>
+            <div class="row"><span class="label">COUNTRY:</span><span class="value">BANGLADESH</span></div>
+            <div class="row"><span class="label">FREE FIRE UID:</span><span class="value">8767337430</span></div>
+            <div class="row"><span class="label">ID STATUS:</span><span class="value">GOOD</span></div>
+            <div class="row"><span class="label">DEVICE INFO:</span><span class="value">VIVO Y17, IPHONE 13 PRO</span></div>
+            <div class="row"><span class="label">DREAM:</span><span class="value">GAMING & CODING</span></div>
+        </div>
+
+        <a href="https://t.me/codex_haseb" target="_blank" class="btn telegram">
+            <i class="fab fa-telegram"></i> TELEGRAM OF HASIB
+        </a>
+        <a href="https://discord.gg/EBPBZPRy" target="_blank" class="btn discord">
+            <i class="fab fa-discord"></i> DISCORD
+        </a>
+
+        <p id="music-status" style="text-align:center; color:#555; font-size:0.8rem; margin-top:10px;">Tap anywhere to play: Sundari (Slowed)</p>
+    </div>
+
+    <div class="footer">99.9% SUCCESS | ONLINE</div>
+
+    <audio id="myAudio" loop>
+        <source src="YTDown.com_YouTube_Sundari-Slowed-Reverb-Sanju-Rathod-Ft-Ya_Media_KCFES2dlknQ_005_240p.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('myAudio');
+        function playMusic() {
+            audio.play().then(() => {
+                document.getElementById('music-status').innerText = "Playing: Sundari (Slowed)";
+                window.removeEventListener('click', playMusic);
+                window.removeEventListener('touchstart', playMusic);
+            }).catch(() => {
+                document.getElementById('music-status').innerText = "Tap again to play music";
+            });
+        }
+        window.addEventListener('click', playMusic);
+        window.addEventListener('touchstart', playMusic);
+    </script>
+</body>
+</html>
